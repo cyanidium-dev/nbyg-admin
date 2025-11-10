@@ -10,7 +10,20 @@ export default defineConfig({
   projectId: 'fz2ftte6',
   dataset: 'production',
 
-  plugins: [structureTool(), visionTool()],
+  plugins: [
+    structureTool({
+      structure: (S) =>
+        S.list()
+          .title('Контент')
+          .items([
+            S.listItem()
+              .title('Сторінки послуг')
+              .schemaType('page')
+              .child(S.documentList().title('Сторінки послуг').filter('_type == "page"')),
+          ]),
+    }),
+    visionTool(),
+  ],
 
   schema: {
     types: schemaTypes,
