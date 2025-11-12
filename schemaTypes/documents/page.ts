@@ -64,6 +64,15 @@ export const page = defineType({
         }),
     }),
     defineField({
+      name: 'menuOrder',
+      type: 'number',
+      title: 'Порядок у меню',
+      description:
+        'Використовується для сортування сторінок у меню. Менше значення = вище у списку.',
+      initialValue: 0,
+      validation: (rule) => rule.min(0),
+    }),
+    defineField({
       name: 'sections',
       type: 'array',
       title: 'Секції сторінки',
