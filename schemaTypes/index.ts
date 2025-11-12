@@ -5,6 +5,8 @@ import {heroSection} from './objects/heroSection'
 import {faqSection} from './objects/faqSection'
 import {tableSection} from './objects/tableSection'
 import {beforeAfterSection} from './objects/beforeAfterSection'
+import {materialSliderSection} from './objects/materialSliderSection'
+import {imageTextButtonSection} from './objects/imageTextButtonSection'
 import {seoSettings} from './objects/seoSettings'
 
 export const schemaTypes = [
@@ -15,5 +17,7 @@ export const schemaTypes = [
   faqSection,
   tableSection,
   beforeAfterSection,
+  materialSliderSection,
+  imageTextButtonSection,
   seoSettings,
 ]

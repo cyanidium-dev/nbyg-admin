@@ -96,7 +96,7 @@ export const tableSection = defineType({
       return {
         title: title || 'Таблиця',
         subtitle: desktopAlignment
-          ? `Розташування: ${desktopAlignment === 'left' ? 'ліворуч' : 'праворуч'}`
+          ? `Таблиця. Розташування: ${desktopAlignment === 'left' ? 'ліворуч' : 'праворуч'}`
           : 'Таблиця',
       }
     },

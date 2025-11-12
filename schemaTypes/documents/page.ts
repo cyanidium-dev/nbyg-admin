@@ -93,6 +93,14 @@ export const page = defineType({
           type: 'beforeAfterSection',
           title: 'До та Після',
         }),
+        defineArrayMember({
+          type: 'materialSliderSection',
+          title: 'Матеріали (слайдер)',
+        }),
+        defineArrayMember({
+          type: 'imageTextButtonSection',
+          title: 'Секція картинка/текст/кнопка',
+        }),
       ],
       validation: (rule) =>
         rule
