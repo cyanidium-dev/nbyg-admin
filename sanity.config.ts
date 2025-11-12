@@ -19,7 +19,12 @@ export default defineConfig({
             S.listItem()
               .title('Сторінки послуг')
               .schemaType('page')
-              .child(S.documentList().title('Сторінки послуг').filter('_type == "page"')),
+              .child(
+                S.documentList()
+                  .title('Сторінки послуг')
+                  .filter('_type == "page"')
+                  .defaultOrdering([{field: 'menuOrder', direction: 'asc'}, {field: 'title', direction: 'asc'}]),
+              ),
           ]),
     }),
     visionTool(),
