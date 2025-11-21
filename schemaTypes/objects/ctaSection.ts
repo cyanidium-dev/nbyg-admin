@@ -1,4 +1,4 @@
-import {defineArrayMember, defineField, defineType} from 'sanity'
+import {defineField, defineType} from 'sanity'
 
 export const ctaSection = defineType({
   name: 'ctaSection',
@@ -7,22 +7,24 @@ export const ctaSection = defineType({
   fields: [
     defineField({
       name: 'title',
-      type: 'string',
-      title: 'Заголовок',
+      type: 'text',
+      title: 'Заголовок (можна додати перенос рядків)',
       validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'description',
-      type: 'array',
+      type: 'text',
       title: 'Опис',
-      description: 'Один або кілька параграфів простого тексту',
-      of: [
-        defineArrayMember({
-          type: 'text',
-          title: 'Параграф',
-        }),
-      ],
-      validation: (rule) => rule.required().min(1),
+      description: 'Короткий опис (можна додати перенос рядків)',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'showMoreOnMobile',
+      type: 'boolean',
+      title: 'Приховати частину опису на мобільних',
+      description:
+        'Якщо увімкнено, на мобільних пристроях частина опису буде прихована з кнопкою "Показати більше"',
+      initialValue: false,
     }),
     defineField({
       name: 'image',
