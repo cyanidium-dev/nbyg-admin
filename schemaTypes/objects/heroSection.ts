@@ -13,7 +13,7 @@ export const heroSection = defineType({
     }),
     defineField({
       name: 'description',
-      type: 'string',
+      type: 'text',
       title: 'Опис',
       description: 'Короткий опис (можна додати перенос рядків)',
       validation: (rule) => rule.required(),

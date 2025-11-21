@@ -23,7 +23,10 @@ export default defineConfig({
                 S.documentList()
                   .title('Сторінки послуг')
                   .filter('_type == "page"')
-                  .defaultOrdering([{field: 'menuOrder', direction: 'asc'}, {field: 'title', direction: 'asc'}]),
+                  .defaultOrdering([
+                    {field: 'menuOrder', direction: 'asc'},
+                    {field: 'title', direction: 'asc'},
+                  ]),
               ),
           ]),
     }),
