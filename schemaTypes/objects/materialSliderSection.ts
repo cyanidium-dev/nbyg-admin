@@ -30,6 +30,7 @@ export const materialSliderSection = defineType({
       name: 'subtitle',
       type: 'string',
       title: 'Підзаголовок',
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'description1',

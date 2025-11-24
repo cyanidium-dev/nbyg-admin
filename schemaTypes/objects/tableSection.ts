@@ -13,15 +13,17 @@ export const tableSection = defineType({
     }),
     defineField({
       name: 'description',
-      type: 'array',
+      type: 'text',
       title: 'Опис',
-      description: 'Один або кілька параграфів тексту',
-      of: [
-        defineArrayMember({
-          type: 'text',
-          title: 'Параграф',
-        }),
-      ],
+      description: 'Опис секції (можна додати перенос рядків)',
+    }),
+    defineField({
+      name: 'image',
+      type: 'image',
+      title: 'Зображення',
+      options: {
+        hotspot: true,
+      },
     }),
     defineField({
       name: 'columns',
