@@ -88,6 +88,13 @@ export const tableSection = defineType({
       },
       validation: (rule) => rule.required(),
     }),
+    defineField({
+      name: 'showDecorativeCircles',
+      type: 'boolean',
+      title: 'Показувати декоративні три кружечки для десктопа',
+      description: 'Якщо увімкнено, на десктопі будуть відображатися декоративні три кружечки',
+      initialValue: false,
+    }),
   ],
   preview: {
     select: {
