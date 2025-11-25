@@ -18,14 +18,6 @@ export const tableSection = defineType({
       description: 'Опис секції (можна додати перенос рядків)',
     }),
     defineField({
-      name: 'image',
-      type: 'image',
-      title: 'Зображення',
-      options: {
-        hotspot: true,
-      },
-    }),
-    defineField({
       name: 'columns',
       type: 'array',
       title: 'Колонки',
@@ -99,14 +91,16 @@ export const tableSection = defineType({
   preview: {
     select: {
       title: 'title',
+      image: 'image',
       desktopAlignment: 'desktopAlignment',
     },
-    prepare({title, desktopAlignment}) {
+    prepare({title, desktopAlignment, image}) {
       return {
         title: title || 'Таблиця',
         subtitle: desktopAlignment
           ? `Таблиця. Розташування: ${desktopAlignment === 'left' ? 'ліворуч' : 'праворуч'}`
           : 'Таблиця',
+        media: image,
       }
     },
   },

@@ -1,4 +1,4 @@
-import {defineArrayMember, defineField, defineType} from 'sanity'
+import {defineField, defineType} from 'sanity'
 
 export const imageTextButtonSection = defineType({
   name: 'imageTextButtonSection',
@@ -33,76 +33,80 @@ export const imageTextButtonSection = defineType({
       options: {
         hotspot: true,
       },
-      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'description',
       type: 'array',
       title: 'Опис',
-      description: 'Один або кілька параграфів тексту',
+      description: 'Текст з переносами рядків та ненумерований список',
       of: [
-        defineArrayMember({
-          type: 'text',
-          title: 'Параграф',
-        }),
+        {
+          type: 'block',
+          styles: [],
+          lists: [{title: 'Ненумерований список', value: 'bullet'}],
+          marks: {
+            decorators: [],
+            annotations: [],
+          },
+        },
       ],
-      validation: (rule) => rule.required().min(1),
-    }),
-    defineField({
-      name: 'buttonStyle',
-      type: 'string',
-      title: 'Стиль кнопки',
-      options: {
-        list: [
-          {title: 'Білий', value: 'white'},
-          {title: 'Прозорий з бордером', value: 'transparentBorder'},
-          {title: 'Коричневий градієнт', value: 'brownGradient'},
-        ],
-        layout: 'radio',
-      },
-      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'buttonText',
       type: 'string',
       title: 'Текст кнопки',
-      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'buttonStyle',
+      type: 'string',
+      title: 'Стиль кнопки',
+      initialValue: 'transparentBorder',
+      options: {
+        list: [
+          {title: 'Прозорий з бордером', value: 'transparentBorder'},
+          {title: 'Білий', value: 'white'},
+          {title: 'Коричневий градієнт', value: 'brownGradient'},
+        ],
+        layout: 'radio',
+      },
+      validation: (rule) =>
+        rule.custom((value, context) => {
+          const buttonText = (context.parent as {buttonText?: string})?.buttonText
+          if (buttonText && !value) {
+            return "Стиль кнопки обов'язковий, якщо вказано текст кнопки"
+          }
+          return true
+        }),
     }),
     defineField({
       name: 'buttonPage',
       type: 'reference',
       title: 'Сторінка для кнопки',
       description:
-        'Оберіть сторінку, на яку має вести кнопка. На фронті буде використано slug обраної сторінки.',
+        'Оберіть сторінку, на яку має вести кнопка. На сайті буде використано slug обраної сторінки.',
       to: [{type: 'page'}],
       options: {
         disableNew: true,
       },
-      validation: (rule) => rule.required(),
+      validation: (rule) =>
+        rule.custom((value, context) => {
+          const buttonText = (context.parent as {buttonText?: string})?.buttonText
+          if (buttonText && !value?._ref) {
+            return "Сторінка для кнопки обов'язкова, якщо вказано текст кнопки"
+          }
+          return true
+        }),
     }),
   ],
   preview: {
     select: {
       title: 'title',
       image: 'image',
-      buttonText: 'buttonText',
-      buttonSlug: 'buttonPage.slug.current',
     },
-    prepare({title, image, buttonText, buttonSlug}) {
-      const subtitleParts = []
-      if (buttonText) {
-        subtitleParts.push(`Кнопка: ${buttonText}`)
-      } else {
-        subtitleParts.push('Кнопка не налаштована')
-      }
-
-      if (buttonSlug) {
-        subtitleParts.push(`Slug: /${buttonSlug}`)
-      }
-
+    prepare({title, image}) {
       return {
         title: title || 'Секція картинка/текст/кнопка',
-        subtitle: subtitleParts.join(' · '),
+        subtitle: 'Секція картинка/текст/кнопка',
         media: image,
       }
     },

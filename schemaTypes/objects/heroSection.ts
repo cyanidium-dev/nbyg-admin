@@ -52,11 +52,14 @@ export const heroSection = defineType({
   preview: {
     select: {
       title: 'title',
+      image: 'mobileImage',
     },
     prepare(selection) {
+      const {title, image} = selection
       return {
-        title: selection.title || 'Hero блок без назви',
+        title: title || 'Hero блок без назви',
         subtitle: 'Hero секція',
+        media: image,
       }
     },
   },
