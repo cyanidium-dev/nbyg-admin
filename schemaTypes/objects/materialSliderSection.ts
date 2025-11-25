@@ -30,30 +30,43 @@ export const materialSliderSection = defineType({
       name: 'subtitle',
       type: 'string',
       title: 'Підзаголовок',
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'description1',
       type: 'array',
       title: 'Опис 1',
-      description: 'Один або кілька параграфів тексту',
+      description: 'Текст з переносами рядків та ненумерований список',
       of: [
-        defineArrayMember({
-          type: 'text',
-          title: 'Параграф',
-        }),
+        {
+          type: 'block',
+          styles: [],
+          lists: [{title: 'Ненумерований список', value: 'bullet'}],
+          marks: {
+            decorators: [],
+            annotations: [],
+          },
+        },
       ],
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'description2',
       type: 'array',
       title: 'Опис 2',
-      description: 'Додаткові параграфи тексту',
+      description: 'Текст з переносами рядків та ненумерований список',
       of: [
-        defineArrayMember({
-          type: 'text',
-          title: 'Параграф',
-        }),
+        {
+          type: 'block',
+          styles: [],
+          lists: [{title: 'Ненумерований список', value: 'bullet'}],
+          marks: {
+            decorators: [],
+            annotations: [],
+          },
+        },
       ],
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'slides',
@@ -84,15 +97,9 @@ export const materialSliderSection = defineType({
             }),
             defineField({
               name: 'description',
-              type: 'array',
+              type: 'text',
               title: 'Опис',
-              description: 'Один або кілька параграфів тексту',
-              of: [
-                defineArrayMember({
-                  type: 'text',
-                  title: 'Параграф',
-                }),
-              ],
+              description: 'Короткий опис (можна додати перенос рядків)',
               validation: (rule) => rule.required().min(1),
             }),
           ],

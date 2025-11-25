@@ -32,16 +32,10 @@ export const faqSection = defineType({
             }),
             defineField({
               name: 'answer',
-              type: 'array',
+              type: 'text',
               title: 'Відповідь',
-              description: 'Один або кілька параграфів звичайного тексту',
-              of: [
-                defineArrayMember({
-                  type: 'text',
-                  title: 'Параграф',
-                }),
-              ],
-              validation: (rule) => rule.required().min(1),
+              description: 'Текст відповіді (можна додати перенос рядків)',
+              validation: (rule) => rule.required(),
             }),
             defineField({
               name: 'buttons',
