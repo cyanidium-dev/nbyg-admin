@@ -53,13 +53,15 @@ export const ctaSection = defineType({
   preview: {
     select: {
       title: 'title',
+      image: 'image',
     },
     prepare(selection) {
-      const {title} = selection
+      const {title, image} = selection
 
       return {
         title: title || 'CTA блок без назви',
         subtitle: 'CTA секція',
+        media: image,
       }
     },
   },
