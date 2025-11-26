@@ -42,7 +42,8 @@ export const ctaSection = defineType({
       description: 'Оберіть, яка кнопка має відображатися',
       options: {
         list: [
-          {title: 'Калькулятор', value: 'calculator'},
+          {title: 'Калькулятор тераси', value: 'calculatorTerrace'},
+          {title: 'Калькулятор даху', value: 'calculatorRoof'},
           {title: 'Напишіть нам', value: 'contact'},
         ],
         layout: 'radio',
