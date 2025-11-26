@@ -43,9 +43,15 @@ export const heroSection = defineType({
       initialValue: false,
     }),
     defineField({
-      name: 'showCalculatorButton',
+      name: 'showCalculatorTerraceButton',
       type: 'boolean',
-      title: 'Показувати кнопку «Калькулятор»',
+      title: 'Показувати кнопку «Калькулятор тераси»',
+      initialValue: false,
+    }),
+    defineField({
+      name: 'showCalculatorRoofButton',
+      type: 'boolean',
+      title: 'Показувати кнопку «Калькулятор даху»',
       initialValue: false,
     }),
   ],
