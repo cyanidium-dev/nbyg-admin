@@ -7,8 +7,8 @@ export const imageTextButtonSection = defineType({
   fields: [
     defineField({
       name: 'title',
-      type: 'string',
-      title: 'Заголовок',
+      type: 'text',
+      title: 'Заголовок (можна додати перенос рядків)',
       validation: (rule) => rule.required(),
     }),
     defineField({
@@ -33,6 +33,21 @@ export const imageTextButtonSection = defineType({
       options: {
         hotspot: true,
       },
+    }),
+    defineField({
+      name: 'imagePosition',
+      type: 'string',
+      title: 'Позиція картинки',
+      description: 'Оберіть, де розташувати зображення на десктопі',
+      initialValue: 'right',
+      options: {
+        list: [
+          {title: 'Зліва', value: 'left'},
+          {title: 'Справа', value: 'right'},
+        ],
+        layout: 'radio',
+      },
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'description',
