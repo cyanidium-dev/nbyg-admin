@@ -114,6 +114,10 @@ export const page = defineType({
           type: 'tableWithImageSection',
           title: 'Секція таблиця з картинкою',
         }),
+        defineArrayMember({
+          type: 'textReavealCardsSliderSection',
+          title: 'Секція слайдер карток з текстом',
+        }),
       ],
       validation: (rule) =>
         rule
