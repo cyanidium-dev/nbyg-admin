@@ -110,6 +110,10 @@ export const page = defineType({
           type: 'imageTextButtonSection',
           title: 'Секція картинка/текст/кнопка',
         }),
+        defineArrayMember({
+          type: 'tableWithImageSection',
+          title: 'Секція таблиця з картинкою',
+        }),
       ],
       validation: (rule) =>
         rule
