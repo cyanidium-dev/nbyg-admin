@@ -53,12 +53,16 @@ export const imageTextButtonSection = defineType({
       name: 'description',
       type: 'array',
       title: 'Опис',
-      description: 'Текст з переносами рядків та ненумерований список',
+      description: 'Текст з переносами рядків та список',
       of: [
         {
           type: 'block',
           styles: [],
-          lists: [{title: 'Ненумерований список', value: 'bullet'}],
+          lists: [
+            {title: 'Ненумерований список', value: 'bullet'},
+            {title: 'Нумерований список', value: 'number'},
+          ],
+
           marks: {
             decorators: [],
             annotations: [],
