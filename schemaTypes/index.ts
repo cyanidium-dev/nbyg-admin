@@ -9,6 +9,7 @@ import {materialSliderSection} from './objects/materialSliderSection'
 import {imageTextButtonSection} from './objects/imageTextButtonSection'
 import {tableWithImageSection} from './objects/tableWithImageSection'
 import {textReavealCardsSliderSection} from './objects/textReavealCardsSliderSection'
+import {roofTypesSection} from './objects/roofTypesSection'
 import {seoSettings} from './objects/seoSettings'
 
 export const schemaTypes = [
@@ -23,5 +24,6 @@ export const schemaTypes = [
   imageTextButtonSection,
   tableWithImageSection,
   textReavealCardsSliderSection,
+  roofTypesSection,
   seoSettings,
 ]

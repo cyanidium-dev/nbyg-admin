@@ -118,6 +118,10 @@ export const page = defineType({
           type: 'textReavealCardsSliderSection',
           title: 'Секція слайдер карток з текстом',
         }),
+        defineArrayMember({
+          type: 'roofTypesSection',
+          title: 'Секція види дахів',
+        }),
       ],
       validation: (rule) =>
         rule
