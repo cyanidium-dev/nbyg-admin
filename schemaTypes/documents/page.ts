@@ -122,6 +122,10 @@ export const page = defineType({
           type: 'roofTypesSection',
           title: 'Секція види дахів',
         }),
+        defineArrayMember({
+          type: 'largeTableSection',
+          title: 'Секція з великою таблицею',
+        }),
       ],
       validation: (rule) =>
         rule
