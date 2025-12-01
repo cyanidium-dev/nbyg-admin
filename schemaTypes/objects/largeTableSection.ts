@@ -35,6 +35,19 @@ export const largeTableSection = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: 'buttonText',
+      type: 'string',
+      title: 'Текст кнопки',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'buttonLink',
+      type: 'string',
+      title: 'Посилання кнопки',
+      description: 'URL адреса, на яку має вести кнопка',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
       name: 'columns',
       type: 'array',
       title: 'Колонки таблиці',
