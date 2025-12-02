@@ -52,6 +52,13 @@ export const gallerySection = defineType({
         }),
       ],
     }),
+    defineField({
+      name: 'showOnServicesPage',
+      type: 'boolean',
+      title: 'Показувати галерею на сторінці Послуг',
+      description: 'Якщо увімкнено, галерея буде відображатися на сторінці Послуг',
+      initialValue: false,
+    }),
   ],
   preview: {
     select: {
@@ -66,4 +73,3 @@ export const gallerySection = defineType({
     },
   },
 })
-
