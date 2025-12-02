@@ -6,10 +6,17 @@ export const gallerySection = defineType({
   type: 'object',
   fields: [
     defineField({
+      name: 'description',
+      type: 'text',
+      title: 'Опис секції галереї',
+      description: 'Опис секції галереї для сторінки Галереї (можна додати перенос рядків)',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
       name: 'items',
       type: 'array',
       title: 'Зображення',
-      description: 'Додайте зображення для десктопу та мобільної версії',
+      description: 'Додайте зображення для галереї',
       validation: (rule) => rule.required().min(1),
       of: [
         defineArrayMember({
@@ -18,18 +25,9 @@ export const gallerySection = defineType({
           title: 'Елемент галереї',
           fields: [
             defineField({
-              name: 'desktopImage',
+              name: 'image',
               type: 'image',
-              title: 'Зображення для десктопу',
-              options: {
-                hotspot: true,
-              },
-              validation: (rule) => rule.required(),
-            }),
-            defineField({
-              name: 'mobileImage',
-              type: 'image',
-              title: 'Зображення для мобільних',
+              title: 'Зображення',
               options: {
                 hotspot: true,
               },
@@ -38,14 +36,13 @@ export const gallerySection = defineType({
           ],
           preview: {
             select: {
-              desktopImage: 'desktopImage',
-              mobileImage: 'mobileImage',
+              image: 'image',
             },
-            prepare({desktopImage, mobileImage}) {
+            prepare({image}) {
               return {
                 title: 'Елемент галереї',
-                subtitle: `${desktopImage ? '✅' : '❌'} десктоп · ${mobileImage ? '✅' : '❌'} мобільне`,
-                media: desktopImage || mobileImage,
+                subtitle: image ? 'Зображення додано' : 'Без зображення',
+                media: image,
               }
             },
           },
