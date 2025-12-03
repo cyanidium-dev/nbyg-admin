@@ -13,6 +13,15 @@ export const gallerySection = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: 'order',
+      type: 'number',
+      title: 'Порядок відображення на сторінці Галереї',
+      description:
+        'Використовується для сортування сторінок у меню. Менше значення = вище у списку.',
+      initialValue: 0,
+      validation: (rule) => rule.min(0),
+    }),
+    defineField({
       name: 'items',
       type: 'array',
       title: 'Зображення',
