@@ -1,4 +1,5 @@
 import {page} from './documents/page'
+import {blogPost} from './documents/blogPost'
 import {ctaSection} from './objects/ctaSection'
 import {gallerySection} from './objects/gallerySection'
 import {heroSection} from './objects/heroSection'
@@ -11,10 +12,12 @@ import {tableWithImageSection} from './objects/tableWithImageSection'
 import {textReavealCardsSliderSection} from './objects/textReavealCardsSliderSection'
 import {roofTypesSection} from './objects/roofTypesSection'
 import {largeTableSection} from './objects/largeTableSection'
+import {tableBlock} from './objects/tableBlock'
 import {seoSettings} from './objects/seoSettings'
 
 export const schemaTypes = [
   page,
+  blogPost,
   heroSection,
   ctaSection,
   gallerySection,
@@ -27,5 +30,6 @@ export const schemaTypes = [
   textReavealCardsSliderSection,
   roofTypesSection,
   largeTableSection,
+  tableBlock,
   seoSettings,
 ]

@@ -1,6 +1,7 @@
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
+import {table} from '@sanity/table'
 import {schemaTypes} from './schemaTypes'
 
 export default defineConfig({
@@ -11,6 +12,7 @@ export default defineConfig({
   dataset: 'production',
 
   plugins: [
+    table(),
     structureTool({
       structure: (S) =>
         S.list()
@@ -27,6 +29,15 @@ export default defineConfig({
                     {field: 'menuOrder', direction: 'asc'},
                     {field: 'title', direction: 'asc'},
                   ]),
+              ),
+            S.listItem()
+              .title('Статті блогу')
+              .schemaType('blogPost')
+              .child(
+                S.documentList()
+                  .title('Статті блогу')
+                  .filter('_type == "blogPost"')
+                  .defaultOrdering([{field: '_createdAt', direction: 'desc'}]),
               ),
           ]),
     }),
