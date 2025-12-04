@@ -68,6 +68,7 @@ export const blogPost = defineType({
           styles: [
             {title: 'Заголовок H2', value: 'h2'},
             {title: 'Заголовок H3', value: 'h3'},
+            {title: 'Заголовок H4', value: 'h4'},
             {title: 'Звичайний текст', value: 'normal'},
           ],
           lists: [
