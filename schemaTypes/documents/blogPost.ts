@@ -68,7 +68,7 @@ export const blogPost = defineType({
           styles: [
             {title: 'Заголовок H2', value: 'h2'},
             {title: 'Заголовок H3', value: 'h3'},
-            {title: 'Звичайний', value: 'normal'},
+            {title: 'Звичайний текст', value: 'normal'},
           ],
           lists: [
             {title: 'Ненумерований список', value: 'bullet'},
@@ -87,7 +87,7 @@ export const blogPost = defineType({
                 fields: [
                   {
                     name: 'href',
-                    type: 'url',
+                    type: 'string',
                     title: 'URL',
                     validation: (rule) => rule.required(),
                   },
