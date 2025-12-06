@@ -1,4 +1,4 @@
-import {defineArrayMember, defineField, defineType} from 'sanity'
+import {defineField, defineType} from 'sanity'
 
 export const blogPost = defineType({
   name: 'blogPost',
@@ -26,6 +26,14 @@ export const blogPost = defineType({
       options: {
         hotspot: true,
       },
+      fields: [
+        {
+          name: 'alt',
+          type: 'string',
+          title: 'Альтернативний текст',
+          description: 'Важливо для SEO та доступності',
+        },
+      ],
       validation: (rule) => rule.required(),
     }),
     defineField({
@@ -35,6 +43,14 @@ export const blogPost = defineType({
       options: {
         hotspot: true,
       },
+      fields: [
+        {
+          name: 'alt',
+          type: 'string',
+          title: 'Альтернативний текст',
+          description: 'Важливо для SEO та доступності',
+        },
+      ],
       validation: (rule) => rule.required(),
     }),
     defineField({
