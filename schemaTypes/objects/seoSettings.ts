@@ -38,6 +38,14 @@ export const seoSettings = defineType({
       options: {
         hotspot: true,
       },
+      fields: [
+        {
+          name: 'alt',
+          type: 'string',
+          title: 'Альтернативний текст',
+          description: 'Важливо для SEO та доступності',
+        },
+      ],
     }),
     defineField({
       name: 'schemaJson',

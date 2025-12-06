@@ -33,6 +33,14 @@ export const ctaSection = defineType({
       options: {
         hotspot: true,
       },
+      fields: [
+        {
+          name: 'alt',
+          type: 'string',
+          title: 'Альтернативний текст',
+          description: 'Важливо для SEO та доступності',
+        },
+      ],
       validation: (rule) => rule.required(),
     }),
     defineField({
