@@ -39,6 +39,10 @@ export default defineConfig({
                   .filter('_type == "blogPost"')
                   .defaultOrdering([{field: '_createdAt', direction: 'desc'}]),
               ),
+            S.listItem()
+              .title('Галерея')
+              .schemaType('galleryPage')
+              .child(S.document().schemaType('galleryPage').documentId('galleryPage')),
           ]),
     }),
     visionTool(),

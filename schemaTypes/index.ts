@@ -1,7 +1,9 @@
 import {page} from './documents/page'
 import {blogPost} from './documents/blogPost'
+import {galleryPage} from './documents/galleryPage'
 import {ctaSection} from './objects/ctaSection'
 import {gallerySection} from './objects/gallerySection'
+import {galleryPageSection} from './objects/galleryPageSection'
 import {heroSection} from './objects/heroSection'
 import {faqSection} from './objects/faqSection'
 import {tableSection} from './objects/tableSection'
@@ -18,9 +20,11 @@ import {seoSettings} from './objects/seoSettings'
 export const schemaTypes = [
   page,
   blogPost,
+  galleryPage,
   heroSection,
   ctaSection,
   gallerySection,
+  galleryPageSection,
   faqSection,
   tableSection,
   beforeAfterSection,
