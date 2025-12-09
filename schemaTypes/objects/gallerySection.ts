@@ -6,22 +6,6 @@ export const gallerySection = defineType({
   type: 'object',
   fields: [
     defineField({
-      name: 'description',
-      type: 'text',
-      title: 'Опис секції галереї',
-      description: 'Опис секції галереї для сторінки Галереї (можна додати перенос рядків)',
-      validation: (rule) => rule.required(),
-    }),
-    defineField({
-      name: 'order',
-      type: 'number',
-      title: 'Порядок відображення на сторінці Галереї',
-      description:
-        'Використовується для сортування сторінок у меню. Менше значення = вище у списку.',
-      initialValue: 0,
-      validation: (rule) => rule.min(0),
-    }),
-    defineField({
       name: 'items',
       type: 'array',
       title: 'Зображення',
@@ -65,13 +49,6 @@ export const gallerySection = defineType({
           },
         }),
       ],
-    }),
-    defineField({
-      name: 'showOnServicesPage',
-      type: 'boolean',
-      title: 'Показувати галерею на сторінці Послуг',
-      description: 'Якщо увімкнено, галерея буде відображатися на сторінці Послуг',
-      initialValue: false,
     }),
   ],
   preview: {
