@@ -18,7 +18,7 @@ export const seoSettings = defineType({
       rows: 3,
       title: 'SEO description',
       description: 'Короткий опис сторінки (до 160 символів)',
-      validation: (rule) => rule.max(160),
+      validation: (rule) => rule.max(260),
     }),
     defineField({
       name: 'keywords',
@@ -59,4 +59,3 @@ export const seoSettings = defineType({
     }),
   ],
 })
-
