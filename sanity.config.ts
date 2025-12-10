@@ -43,6 +43,44 @@ export default defineConfig({
               .title('Галерея')
               .schemaType('galleryPage')
               .child(S.document().schemaType('galleryPage').documentId('galleryPage')),
+            S.listItem()
+              .title('Головна')
+              .schemaType('homePage')
+              .child(S.document().schemaType('homePage').documentId('homePage')),
+            S.listItem()
+              .title('Послуги')
+              .schemaType('servicesPage')
+              .child(S.document().schemaType('servicesPage').documentId('servicesPage')),
+            S.listItem()
+              .title('Про нас')
+              .schemaType('aboutPage')
+              .child(S.document().schemaType('aboutPage').documentId('aboutPage')),
+            S.listItem()
+              .title('Контакти')
+              .schemaType('contactsPage')
+              .child(S.document().schemaType('contactsPage').documentId('contactsPage')),
+            S.listItem()
+              .title('Політика кукі')
+              .schemaType('cookiePolicyPage')
+              .child(S.document().schemaType('cookiePolicyPage').documentId('cookiePolicyPage')),
+            S.listItem()
+              .title('Блог')
+              .schemaType('blogPage')
+              .child(S.document().schemaType('blogPage').documentId('blogPage')),
+            S.listItem()
+              .title('Калькулятор терас')
+              .schemaType('terraceCalculatorPage')
+              .child(
+                S.document()
+                  .schemaType('terraceCalculatorPage')
+                  .documentId('terraceCalculatorPage'),
+              ),
+            S.listItem()
+              .title('Калькулятор дахів')
+              .schemaType('roofCalculatorPage')
+              .child(
+                S.document().schemaType('roofCalculatorPage').documentId('roofCalculatorPage'),
+              ),
           ]),
     }),
     visionTool(),
